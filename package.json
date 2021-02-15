@@ -1,0 +1,19 @@
+{
+  "name": "ci-cd-example",
+  "version": "1.0.0",
+  "description": "A simple aplication for integrated github actions in other projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanFe12/ci-cd-example.git"
+  },
+  "author": "juanfelipeariastabares007@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanFe12/ci-cd-example/issues"
+  },
+  "homepage": "https://github.com/JuanFe12/ci-cd-example#readme"
+}
