@@ -65,6 +65,11 @@
 
     /* Advanced Options */
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
-    "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
-  }
-}
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "outDir": "dist"
+      }
+    }  /* Disallow inconsistently-cased references to the same file. */

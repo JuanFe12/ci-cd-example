@@ -4,7 +4,9 @@
   "description": "A simple aplication for integrated github actions in other projects",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "nodemon src/index.ts",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "test": "jest"
   },
   "repository": {
