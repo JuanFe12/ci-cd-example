@@ -21,11 +21,11 @@ function run() {
     app.use(body_parser_1.default.urlencoded({ extended: false }));
     //app.use(indexRoutes);
     app.get("/", function (_, res) {
-        res.type("application/json").send("Welcome to my api");
+        res.type("application/json").send("Welcome");
     });
-    return app.listen(port, function () {
+    return app.listen(7000, function () {
         // Port is forwarded by docker to 80.
-        console.log("Listening on http://localhost:" + port);
+        console.log("start server in http://localhost:7000");
     });
 }
 exports.run = run;
