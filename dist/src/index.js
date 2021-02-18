@@ -8,13 +8,14 @@ var dotenv_1 = __importDefault(require("dotenv"));
 var express_1 = __importDefault(require("express"));
 var body_parser_1 = __importDefault(require("body-parser"));
 var cors_1 = __importDefault(require("cors"));
+var database_1 = require("../src/database/database");
 // load the environment variables from the .env file
 dotenv_1.default.config({
     path: '.env'
 });
-var port = process.env.APP_PORT || 4848;
 function run() {
     var app = express_1.default();
+    database_1.connectDB();
     app.use(cors_1.default());
     app.use(express_1.default.json());
     app.use(body_parser_1.default.json());

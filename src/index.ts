@@ -2,16 +2,16 @@ import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from "body-parser";
 import cors from 'cors';
+import { connectDB } from '../src/database/database'
 // load the environment variables from the .env file
 dotenv.config({
   path: '.env'
 });
 
-const port = process.env.APP_PORT || 4848;
 
 export function run() {
   const app = express();
-  
+  connectDB();
   app.use(cors());
   app.use(express.json())
   app.use(bodyParser.json());
@@ -23,10 +23,12 @@ export function run() {
     res.type("application/json").send("Welcome");
   });
 
-  return app.listen(7000, function () {
+  return app.listen(1515, function () {
     // Port is forwarded by docker to 80.
-    console.log(`start server in http://localhost:7000`);
+    console.log(`start server in http://localhost:8000`);
   });
+
+
 }
 
 if (process.env.NODE_ENV !== "testing") {

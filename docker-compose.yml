@@ -1,8 +1,22 @@
 version: "3"
 services:
+  db:
+    image: postgres:13-alpine
+    container_name: db
+    environment:
+      - POSTGRES_PASSWORD=asdqwe123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DATABASE=ciexample
+    ports: 
+        - '5432:5432'
+    volumes:
+        - .:/var/lib/postgresql/data
+        - .:/usr/src/app
   web:
     build: ./
+    depends_on: 
+      - db
     ports: 
-      - 7000:7000
+      - 2500:2500
     volumes: 
       - .:/usr/src/app
