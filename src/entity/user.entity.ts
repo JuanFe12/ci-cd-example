@@ -13,10 +13,16 @@ export class User {
     lastName?: string;
 
     @Column()
-    phone?: string;
+    phone?: number;
 
     @Column()
     photoPrifile?: string;
+
+    @Column()
+    email?: string;
+
+    @Column()
+    password?: string;
 
     @Column()
     isActive?: boolean;
