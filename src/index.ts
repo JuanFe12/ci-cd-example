@@ -15,7 +15,7 @@ export function run() {
   app.use(cors());
   app.use(express.json())
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.urlencoded({ extended: true }));
 
   //app.use(indexRoutes);
 
@@ -25,7 +25,7 @@ export function run() {
 
   return app.listen(1515, function () {
     // Port is forwarded by docker to 80.
-    console.log(`start server in http://localhost:8000`);
+    console.log(`start server in http://localhost:1515`);
   });
 
 

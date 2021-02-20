@@ -7,6 +7,7 @@
     "start": "nodemon src/index.ts",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
+    "lint": "eslint . --ext .ts",
     "test": "jest"
   },
   "repository": {
@@ -15,6 +16,7 @@
   },
   "author": "juanfelipeariastabares007@gmail.com",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/JuanFe12/ci-cd-example/issues"
   },
@@ -34,5 +36,11 @@
     "ts-node": "^9.1.1",
     "typeorm": "^0.2.31",
     "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-standard": "^16.0.2"
   }
 }

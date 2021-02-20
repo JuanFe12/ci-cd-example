@@ -6,6 +6,21 @@
     "password": "asdqwe123",
     "database": "ciexample",
     "synchronize": true,
-    "logging": true,
-    "entities": ["src/entities/**/*.ts", "dist/entities/**/*.js"]
-}
+    "migrationsRun": true,
+    "logging": false,
+    "entities": [
+        "src/entity/**/*.ts"
+     ],
+     "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+      },
+     "migrations": [
+        "src/migration/**/*.ts"
+     ],
+     "subscribers": [
+        "src/subscriber/**/*.ts"
+      ]
+
+ }
