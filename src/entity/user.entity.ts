@@ -1,7 +1,9 @@
-import { PrimaryGeneratedColumn, Column, Entity} from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, CreateDateColumn, UpdateDateColumn} from "typeorm";
+
+
 
 @Entity()
-export class User {
+export class User{
 
     @PrimaryGeneratedColumn()
     id?: number;
@@ -25,6 +27,7 @@ export class User {
     password?: string;
 
     @Column()
-    isActive?: boolean;
+    isActive?: boolean; 
+  
 
 }

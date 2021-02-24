@@ -1,15 +1,18 @@
 import { User } from './../entity/user.entity';
-import { Repository } from "typeorm";
-
+import { getRepository } from "typeorm";
 
 //infrastructure
-  export class UserRepository extends Repository<User>{
 
-   async Add(userInput:any){
-     const user = await this.create(userInput)
-     return user
-   }
- }
+     export const Add = async (
+        firstName:string, lastName:string, email:string, password:string, photoPrifile: string, isActive: boolean, phone:number
+        ) => {
+          const userRepository = getRepository(User); 
+          const user = await userRepository.save({firstName, lastName, email, password, photoPrifile,isActive, phone })
+          return user
+        }
 
-
- export default UserRepository
+        export const deleteUserr = async(id:string) =>{
+          const userRepository = getRepository(User); 
+          const user = await userRepository.delete(id)
+          return user;
+        }
