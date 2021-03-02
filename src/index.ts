@@ -2,10 +2,10 @@ import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from "body-parser";
 import cors from 'cors';
-import { connectDB } from '../src/database/database';
 import morgan from 'morgan';
-
+import path  from "path";
 import indexRoutes from '../src/routes/routes';
+import { connectDB } from '../src/database/database';
 // load the environment variables from the .env file
 dotenv.config({
   path: '.env'
@@ -19,7 +19,8 @@ export function run() {
   app.use(express.json())
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(morgan('start'));
+  app.use('/uploads', express.static(path.resolve('uploads')))
+  app.use(morgan('dev'));
 
   app.use(indexRoutes);
 

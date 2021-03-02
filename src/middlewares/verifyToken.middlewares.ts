@@ -12,7 +12,7 @@ export const Tokenvalidation = (req:any, res:Response, next:NextFunction) =>{
         return res.status(401).json('Access denied');
     }
     const payload = jwt.verify(token, process.env.TOKEN_SECRET || 'tokentest') as IPayload;
-    req.userid = payload._id;
+    req.userid = payload._id; 
 
     next();
 }

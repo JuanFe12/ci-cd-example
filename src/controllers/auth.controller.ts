@@ -1,11 +1,10 @@
 
-import { NextFunction, Request, Response } from "express";
+import {  Request } from "express";
 import { getRepository } from "typeorm";
 import { User } from "../entity/user.entity";
-import { Tokenvalidation } from "../middlewares/verifyToken.middlewares";
 import  jwt  from "jsonwebtoken";
 
-export const signIn = async (req:Request, res:any):Promise<any>=>{
+export const signIn = async (req:Request, res:any,):Promise<any>=>{
   try{
     //saving User
     const userRepository = getRepository(User); 

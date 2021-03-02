@@ -2,10 +2,10 @@ import { Add, deleteUserr } from "../repository/user.repository";
 
 
   export const createUser = async(
-    firstName:string, lastName:string, email:string, password:string, photoPrifile, isActive:boolean, phone:number
+    firstName, lastName,email, password, phone
   ):Promise<any> => {
     try {
-      const user = Add(firstName, lastName, email, password, photoPrifile, isActive, phone);
+      const user = Add(firstName, lastName,email, password, phone );
       return user;
     } catch (error) {
       return error;
