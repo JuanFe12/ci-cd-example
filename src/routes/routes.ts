@@ -3,7 +3,7 @@ import { getUser, userCreate, userDelete } from './../controllers/user.controlle
 import { Router } from "express";
 import { profile, signIn } from '../controllers/auth.controller';
 import { Tokenvalidation } from "../middlewares/verifyToken.middlewares";
-import { createPhoto, deletePhoto, getPublications } from '../controllers/publications.controller';
+import { createPhoto, deletePublications, getPublications } from '../controllers/publications.controller';
 import upload from '../libs/multer'
 
 const router = Router();
@@ -18,7 +18,7 @@ router.route('/users')
 
 router.route('/photos')
     .get(getUser)
-    .delete(deletePhoto)
+    .delete(deletePublications)
 router.post('/publi' ,upload.single('imagePath'), createPhoto)
 router.get('/publi',getPublications)
 
